@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Without ClientRouter</title>
+  </head>
+  <body>
+    <h1>Without ClientRouter</h1>
+    <p>Scroll down, then reload the page: the browser restores the scroll before it paints. <a href="/">With ClientRouter</a></p>
+    {Array.from({ length: 3000 }, (_, i) => <section>Section {i + 1}</section>)}
+  </body>
+</html>
+
+<style is:global>
+  section {
+    height: 120px;
+    margin: 8px 0;
+    display: grid;
+    place-items: center;
+    font: 700 32px system-ui;
+  }
+  section:nth-of-type(odd) {
+    background: #c7e3ff;
+  }
+  section:nth-of-type(even) {
+    background: #ffe3c7;
+  }
+</style>
